@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ContentView: View {
     var body: some View {
@@ -35,7 +36,10 @@ struct ContentView: View {
                     Text("Gesture Handling")
                         .padding()
                 }
-            }
+                NavigationLink(destination: MainView()) {
+                    Text("MainView")
+                        .padding()
+                }            }
             .navigationTitle("Medication Reminder")
             .foregroundColor(.red)
         }
@@ -111,25 +115,57 @@ struct CalendarView_Previews: PreviewProvider {
     }
 }
 
- 
-
 
 struct MedicationFormView: View {
     @State private var name: String = ""
     @State private var dosage: String = ""
     @State private var frequency: String = ""
+    @State private var medications: [Medication] = []
 
     var body: some View {
         Form {
-            TextField("Medication Name", text: $name)
-            TextField("Dosage", text: $dosage)
-            TextField("Frequency", text: $frequency)
+            Section(header: Text("Medication Details")) {
+                TextField("Medication Name", text: $name)
+                TextField("Dosage", text: $dosage)
+                TextField("Frequency", text: $frequency)
+            }
+            
             Button("Save") {
+                saveMedication()
             }
         }
         .navigationTitle("Add Medication")
     }
+    
+    private func saveMedication() {
+        guard !name.isEmpty && !dosage.isEmpty && !frequency.isEmpty else {
+            
+            return
+        }
+        
+        let newMedication = Medication(name: name, dosage: dosage, frequency: frequency)
+        medications.append(newMedication)
+        
+        name = ""
+        dosage = ""
+        frequency = ""
+    }
 }
+
+struct MedicationFormView_Previews: PreviewProvider {
+    static var previews: some View {
+        MedicationFormView()
+    }
+}
+
+struct Medication {
+    
+    var name: String
+    var dosage: String
+    var frequency: String
+}
+
+     
 
 struct ActiveMedicationListView: View {
     var body: some View {
@@ -166,7 +202,6 @@ struct DailyMedicationScheduleView: View {
     }
 }
 
-import SwiftUI
 
 struct GestureHandling: View {
     @State private var scale: CGFloat = 1.0
@@ -179,7 +214,7 @@ struct GestureHandling: View {
                 self.offset = value.translation
             }
             .onEnded { _ in
-                // Do something when dragging ends
+            
             }
         
         let rotationGesture = RotationGesture()
@@ -187,7 +222,7 @@ struct GestureHandling: View {
                 self.rotation = angle
             }
             .onEnded { _ in
-                // Do something when rotation ends
+                
             }
         
         let magnificationGesture = MagnificationGesture()
@@ -195,7 +230,7 @@ struct GestureHandling: View {
                 self.scale = scale
             }
             .onEnded { _ in
-                // Do something when magnification ends
+                
             }
         
         return Text("Gesture Handling")
@@ -212,3 +247,36 @@ struct GestureHandling_Previews: PreviewProvider {
         GestureHandling()
     }
 }
+
+               
+     
+
+import SwiftUI
+
+struct MainView: View {
+    var body: some View {
+        NavigationView {
+            List {
+                Text("Salintone ")
+                Text("Cetrizine ")
+                Text("Vitamin D")
+            }
+            .navigationTitle("Medications")
+            .navigationBarItems(trailing: addButton)
+        }
+    }
+
+    private var addButton: some View {
+        NavigationLink(destination: Text("Medication Form")) {
+            Image(systemName: "plus")
+        }
+    }
+}
+
+struct MainView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainView()
+    }
+}
+
+

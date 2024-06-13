@@ -16,6 +16,7 @@
 		B8B4D5AA2C184F2D000FA06D /* MedicationRemainderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B4D5A92C184F2D000FA06D /* MedicationRemainderUITestsLaunchTests.swift */; };
 		B8B4D5C32C18528A000FA06D /* RemainderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B4D5C22C18528A000FA06D /* RemainderStore.swift */; };
 		B8B4D5C52C1852D3000FA06D /* RemainderInteractionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B4D5C42C1852D3000FA06D /* RemainderInteractionManager.swift */; };
+		B8B66D302C199AC50080A132 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B66D2F2C199AC50080A132 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		B8B4D5A92C184F2D000FA06D /* MedicationRemainderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationRemainderUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B8B4D5C22C18528A000FA06D /* RemainderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemainderStore.swift; sourceTree = "<group>"; };
 		B8B4D5C42C1852D3000FA06D /* RemainderInteractionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemainderInteractionManager.swift; sourceTree = "<group>"; };
+		B8B66D2F2C199AC50080A132 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				B8B4D5C42C1852D3000FA06D /* RemainderInteractionManager.swift */,
 				B8B4D5C22C18528A000FA06D /* RemainderStore.swift */,
 				B8B4D58E2C184F2B000FA06D /* ContentView.swift */,
+				B8B66D2F2C199AC50080A132 /* MainView.swift */,
 				B8B4D5902C184F2D000FA06D /* Assets.xcassets */,
 				B8B4D5922C184F2D000FA06D /* Preview Content */,
 			);
@@ -266,6 +269,7 @@
 				B8B4D58F2C184F2B000FA06D /* ContentView.swift in Sources */,
 				B8B4D5C52C1852D3000FA06D /* RemainderInteractionManager.swift in Sources */,
 				B8B4D5C32C18528A000FA06D /* RemainderStore.swift in Sources */,
+				B8B66D302C199AC50080A132 /* MainView.swift in Sources */,
 				B8B4D58D2C184F2B000FA06D /* MedicationRemainderApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
